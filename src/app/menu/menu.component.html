@@ -1,0 +1,26 @@
+<div class="loader-container padding-vertical-60" *ngIf="loading">
+    <!-- <loaders-css [loader]="'ball-grid-pulse'" class="full-width" [loaderClass]="'app-loader'"></loaders-css> -->
+</div>
+<div class="row search-bar-container">
+    <div class="input-group input-group-lg">
+        <i class="glyphicon glyphicon-search form-control-feedback search-bar-icon"></i>
+        <input type="text" class="form-control" placeholder="Pesquisar" [(ngModel)]="selectedItem"
+            (typeaheadOnSelect)="navigate($event); selectedItem = '';">
+    </div>
+</div>
+<ul class="nav nav-stacked" *ngFor="let item of menu">
+    <li *ngIf="item.submenu.length > 0">
+        <a (click)="collapse(item)" [ngClass]="{ 'menu-selected': item.collapsed }">
+            <i [class]="item.data"></i>
+            <span class="menu-item">{{item.name}}</span>
+        </a>
+        <ul class="nav nav-stacked submenu" *ngFor="let subitem of item.submenu">
+            <li>
+                <i [class]="subitem.data"></i>
+                <a [routerLink]="[subitem.action]" *ngIf="subitem.action.indexOf('http') !== 0 ">{{subitem.name}}</a>
+                <a (click)="openExternalLink(subitem.action)"
+                    *ngIf="subitem.action.indexOf('http') === 0">{{subitem.name}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>
