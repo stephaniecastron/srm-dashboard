@@ -20,7 +20,8 @@
             "prefix": "srm",
             "styles": [
                 "styles.scss",
-                "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+                "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "./assets/font/flaticon.scss"
             ],
             "scripts": [],
             "environmentSource": "environments/environment.ts",
