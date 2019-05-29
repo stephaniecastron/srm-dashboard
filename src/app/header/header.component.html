@@ -1,14 +1,35 @@
 <div class="row header">
-    <!-- <div class="header input-group input-group-lg"> -->
     <div class="col-sm-4">
         <div class="logo-app"></div>
     </div>
 
-    <div class="col-sm-3 custom-select">
-        <label for="ecnomicGroup">Grupo Econômico:</label>
-        <select class="form-control" name="ecnomicGroup">
+    <div class="col-sm-4 custom-select">
+        <label for="ecnomic-group">Grupo Econômico:</label>
+        <select class="form-control" name="ecnomic-group">
             <option select>Visão Agregada 1</option>
         </select>
     </div>
-    <!-- </div> -->
+    <!-- <p-overlayPanel appendTo="body" styleClass="ui-overlaypanel-dropdown-menu" #panel> -->
+    <div class="col-sm-4">
+        <div class="btn-group user-info" dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                aria-controls="dropdown-basic">
+                <span class="glyphicon glyphicon-user pull-left"></span> {{ user?.name }}
+                <span class="button-dropdown">
+                    <img src="assets/images/down-chevron.png">
+                </span>
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" href="#">Meu Cadastro</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Configurações da Conta</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+        </div>
+        <div class="btn-group notification">
+            <button id="button-basic" type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-bell"></span>
+            </button>
+        </div>
+    </div>
 </div>

@@ -10,6 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuService } from './menu/menu.service';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { UserService } from './common/user/user.service';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 @NgModule({
     declarations: [
@@ -25,8 +28,12 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
         AppRoutingModule,
         HttpClientModule,
         TypeaheadModule.forRoot(),
+        BsDropdownModule.forRoot()
     ],
-    providers: [MenuService],
+    providers: [
+        MenuService,
+        UserService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,17 +6,18 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $font-family-base: "Open Sans",
 sans-serif;
 $headings-font-weight: 700;
-$panel-default-text: #fff;
+$panel-default-text:#fff;
 $table-bg-hover: darken(#F2F7FD, 5%) !default;
 $brand-primary: #00233D !default;
 $brand-secondary: #EBEBEB !default;
+$brand-info:#3c97cd;
 //Variables
 $bg-color-menu: #00233D;
-$color-menu: #fff;
+$color-menu:$panel-default-text;
 $bg-color-content: #dedede;
 $title-color: darken($brand-secondary, 30%);
 
-$bg-color-content-light: #fff;
+$bg-color-content-light:$panel-default-text;
 
 
 
@@ -51,12 +52,12 @@ body {
     }
 
     li {
-        color: #fff;
+        color: $panel-default-text;
 
         &:hover,
         &:active,
         &:focus {
-            color: #fff;
+            color: $panel-default-text;
         }
     }
 
@@ -82,23 +83,23 @@ srm-menu {
         &:hover {
             background-color: darken($bg-color-menu, 5%) !important;
             border-left: 3px solid $brand-warning !important;
-            color: #fff !important;
+            color: $panel-default-text !important;
         }
 
         &:focus {
             background-color: transparent;
-            color: #fff !important;
+            color: $panel-default-text !important;
         }
     }
 
     .nav>li>hr {
         margin-top: 0;
         margin-bottom: 0;
-        border-top: 2px solid #345D7F;
+        border-top: 2px solid $brand-info;
     }
 
     i {
-        color: #fff !important;
+        color: $panel-default-text !important;
     }
 }
 
@@ -166,23 +167,8 @@ srm-header .header {
     margin-top: 10px;
 }
 
-
-
-// select {
-//     width: 268px;
-//     padding: 5px;
-//     font-size: 16px;
-//     line-height: 1;
-//     border: 0;
-//     border-radius: 5px;
-//     height: 34px;
-//     // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
-//     -webkit-appearance: none;
-//     background-position-x: 244px;
-
-// }
 .custom-select {
-    padding-top: 0.7em;
+    padding-top: 0.9em;
 
     label {
         font-weight: 200;
@@ -196,13 +182,48 @@ srm-header .header {
         -webkit-border-radius: 0px;
         appearance: none;
         width: 50%;
-        height: 50px;
+        height: 40px;
         border-color: $brand-primary;
-        background-position: calc(100% - 10px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+        background-position: calc(100% - 10px) calc(0.7em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+
 
         option {
             padding: 10px 0;
         }
+    }
+}
+
+.user-info {
+    padding-top: 0.9em;
+
+    button {
+        border-color: $bg-color-menu;
+        background-color: $bg-color-menu;
+        color: $panel-default-text;
+        border-radius: 0;
+        height: 40px;
+        width: 200px;
+    }
+
+    span.glyphicon.glyphicon-user {
+        padding-right: 20px;
+    }
+
+    span.button-dropdown {
+        padding-left: 20px;
+    }
+}
+
+.notification {
+    padding-top: 0.9em;
+
+    button {
+        border-radius: 0;
+        height: 40px;
+        display: inline-block;
+        color: $panel-default-text;
+        border-color: $brand-info;
+        background-color: $brand-info;
     }
 }
 
@@ -283,7 +304,7 @@ hr {
 
 
 .icon-bar {
-    background-color: #fff;
+    background-color: $panel-default-text;
 }
 
 .navbar-brand img {
@@ -365,7 +386,7 @@ hr {
 .nav-tabs>li>a {
     border: 0;
     top: 11px;
-    color: #fff;
+    color: $panel-default-text;
     margin-right: 7px;
 }
 
@@ -414,42 +435,5 @@ hr {
 
     .password-buttons>div>button {
         padding: 2px;
-    }
-}
-
-//IE10 Hack
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-
-    #password,
-    .password {
-        font-size: 1.5em;
-    }
-
-    .title {
-        padding-bottom: 7px;
-    }
-
-    @media (min-width: 768px) {
-        .login-page {
-            height: 55vh;
-        }
-    }
-}
-
-//Mozilla Hack
-@-moz-document url-prefix() {
-
-    html {
-        scrollbar-width: thin;
-    }
-
-    .nav-tabs>li>a {
-        top: 10px;
-    }
-
-    select {
-        color: rgba(0, 0, 0, 0) !important;
-        text-shadow: 0 0 0 #000;
     }
 }
