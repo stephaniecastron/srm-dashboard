@@ -168,16 +168,43 @@ srm-header .header {
 
 
 
-/* enables CSS3 transition for simple collapses, accordion and also navbar in responsive view */
+// select {
+//     width: 268px;
+//     padding: 5px;
+//     font-size: 16px;
+//     line-height: 1;
+//     border: 0;
+//     border-radius: 5px;
+//     height: 34px;
+//     // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+//     -webkit-appearance: none;
+//     background-position-x: 244px;
 
-.collapse {
-    transition: height .3s ease-out;
-    /*-webkit-transition: height .3s ease-out*/
+// }
+.custom-select {
+    padding-top: 0.7em;
+
+    label {
+        font-weight: 200;
+    }
+
+    select {
+        display: inline-block;
+        background: url("./assets/images/down-chevron.png") no-repeat right;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        appearance: none;
+        width: 50%;
+        height: 50px;
+        border-color: $brand-primary;
+        background-position: calc(100% - 10px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+
+        option {
+            padding: 10px 0;
+        }
+    }
 }
-
-/* styles the close button for the dismissible popovers */
-
-
 
 .navbar-app {
 
