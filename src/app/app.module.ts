@@ -12,6 +12,9 @@ import { MenuService } from './menu/menu.service';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { UserService } from './common/user/user.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PainelComponent } from './painel/painel.component';
+import { DigitalAccountComponent } from './digital-account/digital-account.component';
+import { ReceivablesComponent } from './receivables/receivables.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
         AppComponent,
         DashboardComponent,
         HeaderComponent,
-        MenuComponent
+        MenuComponent,
+        PainelComponent,
+        DigitalAccountComponent,
+        ReceivablesComponent
     ],
     imports: [
         BrowserModule,

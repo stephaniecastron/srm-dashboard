@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../common/user/user.service';
 import { User } from '../common/user/user';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'srm-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
     user: User;
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private router: Router) {
+    }
 
     ngOnInit() {
         this.userService.getUser()

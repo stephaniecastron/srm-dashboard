@@ -1,0 +1,57 @@
+<div class="title hide-on-print">
+    <i class="fi flaticon-earth"></i>
+    <span class="hide-on-print">Painel gestão</span>
+    <label for="ecnomic-group">Produto:</label>
+    <select class="form-control" name="ecnomic-group">
+        <option select>Todos</option>
+    </select>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Atalhos
+            </div>
+            <div class="panel-body">
+                <div class="text-center col-sm-4">
+                    <div>
+                        Envio
+                    </div>
+                    <div>
+                        Envio de Duplicatas
+                    </div>
+                    <div>
+                        Nova Operação
+                    </div>
+                </div>
+                <div class="text-center col-sm-4">
+                    <div>
+                        Assinatura
+                    </div>
+                    <div>
+                        Assinatura Digital
+                    </div>
+                </div>
+                <div class="text-center col-sm-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Alertas
+            </div>
+            <div class="panel-body">
+                <div class="loader-container-small" *ngIf="limitsLoading">
+                    <loaders-css [loader]="'ball-pulse'" class="full-width" [loaderClass]="'app-loader'"></loaders-css>
+                </div>
+                <div *ngIf="!limitsLoading" class="text-center"
+                    [ngClass]="{ 'text-danger': limits.vlLimiteChequeEspecial < 0 }">
+                    {{ limits.vlLimiteChequeEspecial || 0 | number:'1.2-2' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
