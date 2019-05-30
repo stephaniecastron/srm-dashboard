@@ -10,10 +10,10 @@ $panel-default-text:#fff;
 $table-bg-hover: darken(#F2F7FD, 5%) !default;
 $brand-primary: #00233D !default;
 $brand-secondary: #EBEBEB !default;
-$brand-info:#3c97cd;
+$brand-info: #439DD9 !default;
 //Variables
-$bg-color-menu: #00233D;
-$color-menu:$panel-default-text;
+$bg-color-menu: #00233D !default;
+$color-menu:#fff;
 $bg-color-content: #dedede;
 $title-color: darken($brand-secondary, 30%);
 
@@ -39,7 +39,61 @@ body {
     border-radius: 4px;
 }
 
+.panel.panel-primary {
+    -webkit-box-shadow: 0px -4px 19px 0px #b9b9ba;
+    -moz-box-shadow: 0px -4px 19px 0px #b9b9ba;
+    box-shadow: 0px -4px 19px 0px #b9b9ba;
+    border-color: transparent;
+    padding-left: 10px;
+    border-radius: 0;
+    height: 450px;
 
+    >.panel-heading {
+        .custom-title {
+            color: $brand-info;
+        }
+
+        background-color: $panel-default-text;
+        border-color: $bg-color-content;
+        color: #897b7b;
+        font-size: 25px;
+        height: 90px;
+        padding: 25px;
+    }
+}
+
+.panel-alert-info {
+    >div.row {
+        border-bottom: 1px solid $bg-color-content;
+        margin: 30px;
+
+        >div {
+            padding-bottom: 10px;
+        }
+    }
+
+}
+
+.custom-box-label {
+    text-align: left;
+    padding-left: 1em;
+}
+
+.custom-box {
+    border: 1px solid $brand-info;
+    width: 180px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.custom-box-line>hr {
+    width: 1px;
+    height: 164px;
+    background: $bg-color-content;
+    border: none;
+    top: -35px;
+    position: relative
+}
 
 .navbar {
     overflow-x: hidden;
@@ -193,6 +247,31 @@ srm-header .header {
     }
 }
 
+.custom-select-alert-panel {
+    .select-label {
+        padding: 10px 0;
+    }
+
+    select {
+        display: inline-block;
+        background: url("./assets/images/angle-arrow-down.png") no-repeat right;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        appearance: none;
+        text-align-last: center;
+        height: 40px;
+        border-color: $brand-primary;
+        background-position: calc(100% - 10px) calc(0.7em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+
+
+        option {
+            padding: 10px 0;
+        }
+
+    }
+}
+
 .user-info {
     padding-top: 0.9em;
 
@@ -216,6 +295,7 @@ srm-header .header {
 
 .notification {
     padding-top: 0.9em;
+    left: -4px;
 
     button {
         border-radius: 0;
@@ -224,6 +304,24 @@ srm-header .header {
         color: $panel-default-text;
         border-color: $brand-info;
         background-color: $brand-info;
+    }
+
+    mark {
+        border-radius: 10px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        width: 20px;
+        height: 20px;
+        background-color: #FF6B6B;
+        position: absolute;
+        top: -10px;
+        left: 6px;
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+        color: #FFF;
+        font-weight: 700;
     }
 }
 
@@ -243,6 +341,7 @@ srm-header .header {
 .table-hover>tbody>tr:hover {
     background-color: lighten($brand-primary, 68%) !important;
 }
+
 
 
 @-webkit-keyframes fadeIn {
@@ -401,6 +500,33 @@ hr {
     background-color: $brand-primary;
 }
 
+.breadcrumb {
+    background-color: transparent !important;
+    padding: 15px !important;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: " > ";
+    padding: 0 5px
+}
+
+
+.title {
+    margin: 15px 0px 15px 40px;
+    font-size: 32px;
+    padding-bottom: 11px;
+    color: $bg-color-menu;
+
+    i {
+        padding-right: 20px;
+    }
+
+    span {
+        padding: 0 10px 9px 0;
+    }
+}
+
+
 
 
 
@@ -433,7 +559,4 @@ hr {
         font-size: 13px;
     }
 
-    .password-buttons>div>button {
-        padding: 2px;
-    }
 }

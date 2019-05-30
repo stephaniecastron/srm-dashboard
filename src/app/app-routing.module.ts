@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppComponent } from './app.component';
-import { PainelComponent } from './painel/painel.component';
+import { PanelComponent } from './panel/panel.component';
 import { DigitalAccountComponent } from './digital-account/digital-account.component';
 import { ReceivablesComponent } from './receivables/receivables.component';
 
@@ -10,40 +9,48 @@ const routes: Routes = [
     {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full',
-        data: {
-
-            breadcrumbs: 'Página Inicial'
-        }
-    },
-    {
-        path: '/painel',
-        component: PainelComponent,
-        data: {
-            breadcrumbs: 'Painel de Gestão'
-        }
+        pathMatch: 'full'
     },
     {
         path: '',
-        component: DigitalAccountComponent,
-        pathMatch: '/digital-account',
+        component: DashboardComponent,
         data: {
-            // Uses static text (Home)
-            breadcrumbs: 'Conta Digital'
-        }
+            breadcrumbs: true,
+            text: 'Página Inicial'
+        },
+        children: [
+            {
+                path: 'panel',
+                component: PanelComponent,
+                data: {
+                    breadcrumbs: true,
+                    text: 'Painel de Gestão',
+                }
+            },
+            {
+                path: 'digital-account',
+                component: DigitalAccountComponent,
+                data: {
+                    breadcrumbs: true,
+                    text: 'Conta Digital'
+                }
+            },
+            {
+                path: 'receivables',
+                component: ReceivablesComponent,
+                data: {
+                    breadcrumbs: true,
+                    text: 'Ant. Recebíveis'
+                }
+            },
+        ]
     },
-    {
-        path: '/receivables',
-        component: ReceivablesComponent,
-        data: {
-            breadcrumbs: 'Ant. Recebíveis'
-        }
-    },
+
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [],
+    exports: [RouterModule],
     declarations: [],
 })
 export class AppRoutingModule { }

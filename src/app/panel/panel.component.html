@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-sm-7 title">
+        <i class="fi flaticon-earth"></i>
+        <span class="hide-on-print">Painel de Gestão</span>
+    </div>
+    <div class="col-sm-4 custom-select text-right pull-right">
+        <label for="ecnomic-group">Produto:</label>
+        <select class="form-control" name="ecnomic-group">
+            <option select>Todos</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Atalhos
+            </div>
+            <div class="panel-body">
+                <div class="text-center col-sm-4 ">
+                    <h5 class="custom-box-label">Operacional</h5>
+                    <div class="custom-box">
+                        Envio
+                    </div>
+                    <div class="custom-box">
+                        Envio de Duplicatas
+                    </div>
+                    <div class="custom-box">
+                        Nova Operação
+                    </div>
+                </div>
+                <div class="text-center col-sm-3">
+                    <h5 class="custom-box-label">&nbsp;</h5>
+                    <div class="custom-box">
+                        Assinatura
+                    </div>
+                    <div class="custom-box">
+                        Assinatura Digital
+                    </div>
+                </div>
+                <div class="col-sm-1 custom-box-line">
+                    <hr />
+                </div>
+                <div class="text-center col-sm-4">
+                    <h5 class="custom-box-label">Geral</h5>
+                    <div class="custom-box">
+                        Carteira
+                    </div>
+                    <div class="custom-box">
+                        Instruções
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="col-sm-8  custom-title">
+                    Alertas
+                </div>
+                <div class="col-sm-4 pull-right text-center">
+                    <h5>
+                        Últimos 5 dias
+                    </h5>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-alert-info">
+                    <div class="row">
+                        <div>
+                            <span>23 Notas Canceladas</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="select">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row custom-select-alert-panel">
+                        <div class="col-sm-6 select-label">
+                            <span>13 Notas Canceladas</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option select disabled>Ações</option>
+                                <option [value]="action" *ngFor="let action of actions">{{action.description}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row custom-select-alert-panel">
+                        <div class="col-sm-6 select-label">
+                            <span>7 Assinaturas Digital</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option select disabled>Ações</option>
+                                <option [value]="action" *ngFor="let action of actions">{{action.description}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

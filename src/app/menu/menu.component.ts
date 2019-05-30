@@ -20,19 +20,22 @@ export class MenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        setTimeout(() => {
-            this.menuService.getMenu()
-                .subscribe((menus) => {
-                    this.menu = menus;
-                    for (const menu of menus) {
-                        const name = menu.name;
-                        this.searchItems.push({
-                            link: menu.action,
-                            name: name
-                        });
+        // setTimeout(() => {
+        this.menuService.getMenu()
+            .subscribe((menus) => {
+                for (const menu of menus) {
+                    const name = menu.name;
+                    if (menu.menuId === 1) {
+                        menu.selected = true;
                     }
-                }, (err) => console.error(err));
-        }, 1000);
+                    this.searchItems.push({
+                        link: menu.action,
+                        name: name
+                    });
+                }
+                this.menu = menus;
+            }, (err) => console.error(err));
+        // }, 1000);
     }
 
     navigate(event): void {
@@ -47,6 +50,7 @@ export class MenuComponent implements OnInit {
             }
         }
         item.selected = !item.selected;
+        this.router.navigate([item.action]);
     }
 
 }

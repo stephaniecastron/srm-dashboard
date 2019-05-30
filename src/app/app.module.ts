@@ -12,9 +12,11 @@ import { MenuService } from './menu/menu.service';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { UserService } from './common/user/user.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { PainelComponent } from './painel/painel.component';
+import { PanelComponent } from './panel/panel.component';
 import { DigitalAccountComponent } from './digital-account/digital-account.component';
 import { ReceivablesComponent } from './receivables/receivables.component';
+import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
+import { PanelService } from './panel/panel.service';
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { ReceivablesComponent } from './receivables/receivables.component';
         DashboardComponent,
         HeaderComponent,
         MenuComponent,
-        PainelComponent,
+        PanelComponent,
         DigitalAccountComponent,
         ReceivablesComponent
     ],
@@ -34,11 +36,13 @@ import { ReceivablesComponent } from './receivables/receivables.component';
         AppRoutingModule,
         HttpClientModule,
         TypeaheadModule.forRoot(),
-        BsDropdownModule.forRoot()
+        BsDropdownModule.forRoot(),
+        McBreadcrumbsModule.forRoot()
     ],
     providers: [
         MenuService,
-        UserService
+        UserService,
+        PanelService
     ],
     bootstrap: [AppComponent]
 })
